@@ -5,7 +5,32 @@ Cocoa-GPT 🍫 is an AI-powered digital chocolate box. It uses Three.js for 3D p
 A premium, interactive web experience designed for that special someone. This project blends 3D graphics, smooth animations, and Artificial Intelligence to create a digital chocolate box that never empties.
 
 ---
+classDiagram
+    class UserInterface {
+        +revealSecret()
+        +toggleMusic()
+        +generateChocolatePoem()
+        +speakPoem()
+    }
+    class ThreeJS_Engine {
+        +initThree()
+        +animate()
+        +createHeartShape()
+    }
+    class ParticleSystem {
+        +initParticles()
+        +animateParticles()
+    }
+    class GeminiAPI {
+        +apiKey: String
+        +generateContent(prompt)
+        +generateAudio(text)
+    }
 
+    UserInterface --> GeminiAPI : Requests Poem/TTS
+    UserInterface --> ThreeJS_Engine : Overlays on
+    UserInterface --> ParticleSystem : Triggers on load
+    ThreeJS_Engine ..> ParticleSystem : Visual Synergy
 ## ✨ Features
 
 * 🎨 **3D Visuals:** A floating, pulsing 3D heart rendered using **Three.js** with a metallic gold and silk pink finish.
